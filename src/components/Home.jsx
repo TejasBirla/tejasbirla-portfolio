@@ -11,14 +11,14 @@ export default function Home({ id }) {
       id={id}
       className="bg-[#FAFAFA] scroll-mt-16 text-gray-800 min-h-[90vh] flex items-center py-8 md:py-10"
     >
-      <div className="max-w-[1170px] mx-auto px-5 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16">
+      <div className="max-w-[1170px] mx-auto px-5 sm:px-4 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16">
         {/* Left Side - Text */}
         <div
           className="flex flex-col gap-4"
           data-aos="fade-right"
           data-aos-once="true"
         >
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+          <h2 className="text-3xl md:text-5xl font-bold leading-tight">
             Hi, I'm{" "}
             <span className="green-text">
               <Typewriter
@@ -36,7 +36,7 @@ export default function Home({ id }) {
             MERN Stack Developer
           </h3>
 
-          <p className="text-gray-600 text-justify text-[16px] leading-relaxed max-w-[520px]">
+          <p className="text-gray-600 text-[16px] leading-relaxed max-w-full md:max-w-[530px] text-left md:text-justify">
             I’m a passionate developer focused on building impactful full-stack
             applications using the MERN stack. I love crafting clean, efficient,
             and scalable code that brings ideas to life. Currently, I’m pursuing
@@ -47,11 +47,12 @@ export default function Home({ id }) {
             , and continuously improving my problem-solving and development
             skills.
           </p>
+
           <p className="text-[15px] md:text-[16px] font-medium text-gray-800 mt-2">
             💼 Currently open for internships and job opportunities!
           </p>
 
-          <p className="text-[15px] md:text-[16px] text-gray-700 font-semibold mt-4 tracking-wide">
+          <p className="text-[15px] md:text-[16px] text-gray-700 font-semibold mt-4">
             Turning ideas into reality — let’s connect!
           </p>
 
@@ -61,7 +62,7 @@ export default function Home({ id }) {
               target="_blank"
               rel="noreferrer"
               className="hover:scale-110 transition-transform"
-              style={{ color: "#EA4335" }} // Gmail Red
+              style={{ color: "#EA4335" }}
             >
               <MdEmail />
             </a>
@@ -71,7 +72,7 @@ export default function Home({ id }) {
               target="_blank"
               rel="noreferrer"
               className="hover:scale-110 transition-transform"
-              style={{ color: "#0A66C2" }} // LinkedIn Blue
+              style={{ color: "#0A66C2" }}
             >
               <FaLinkedin />
             </a>
@@ -81,7 +82,7 @@ export default function Home({ id }) {
               target="_blank"
               rel="noreferrer"
               className="hover:scale-110 transition-transform"
-              style={{ color: "#171515" }} // GitHub Black
+              style={{ color: "#171515" }}
             >
               <FaGithub />
             </a>
@@ -91,7 +92,7 @@ export default function Home({ id }) {
               target="_blank"
               rel="noreferrer"
               className="hover:scale-110 transition-transform"
-              style={{ color: "#000000" }} // X Dark
+              style={{ color: "#000000" }}
             >
               <FaXTwitter />
             </a>
