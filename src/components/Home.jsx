@@ -11,7 +11,7 @@ export default function Home({ id }) {
       id={id}
       className="bg-[#FAFAFA] scroll-mt-16 text-gray-800 min-h-[90vh] flex items-center py-8 md:py-10"
     >
-      <div className="max-w-[1170px] mx-auto px-5 sm:px-4 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16">
+      <div className="max-w-[1170px] mx-auto px-5 sm:px-4 flex flex-col md:flex-row items-center justify-between gap-11 md:gap-16">
         {/* Left Side - Text */}
         <div
           className="flex flex-col gap-4"
@@ -52,13 +52,13 @@ export default function Home({ id }) {
             💼 Currently open for internships and job opportunities!
           </p>
 
-          <p className="text-[15px] md:text-[16px] text-gray-700 font-semibold mt-4">
+          <p className="text-[14px] md:text-[16px] text-gray-700 font-semibold mt-4">
             Turning ideas into reality — let’s connect!
           </p>
 
           <div className="flex items-center gap-7 mt-3 text-[26px] md:text-[30px]">
             <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=tejasbirla3@gmail.com"
+              href="mailto:tejasbirla3@gmail.com"
               target="_blank"
               rel="noreferrer"
               className="hover:scale-110 transition-transform"
