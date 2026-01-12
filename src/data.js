@@ -1,13 +1,22 @@
 import ShopperImg from "../src/assets/ShopperImg.png";
+import pulseCheckImg from "../src/assets/pulseCheckImg.png";
 import EventlyImg from "../src/assets/EventlyImg.png";
 import SnipVaultImg from "../src/assets/SnipVaultImg.png";
 import QuickChatImg from "../src/assets/quickChatImg.png";
-import TodoImg from "../src/assets/Todo.jpg";
 import WeatherAppImg from "../src/assets/weather.jpg";
 
 const projects = [
   {
     pId: 1,
+    name: "pulseCheck Monitoring System",
+    image: pulseCheckImg,
+    description:
+      "PulseCheck is a real-time website and API uptime monitoring platform that helps users track availability, response times, and service reliability.",
+    liveDemo: "https://pulse-check-api-monitoring.vercel.app",
+    githubLink: "https://github.com/TejasBirla/pulseCheck",
+  },
+  {
+    pId: 2,
     name: "Shopper E-Commerce Platform",
     image: ShopperImg,
     description:
@@ -16,7 +25,7 @@ const projects = [
     githubLink: "https://github.com/TejasBirla/SHOPPER-shopping-website",
   },
   {
-    pId: 2,
+    pId: 3,
     name: "Evently - Event Booking Platform",
     image: EventlyImg,
     description:
@@ -26,7 +35,7 @@ const projects = [
       "https://github.com/TejasBirla/Evently---Ticket-Booking-website",
   },
   {
-    pId: 3,
+    pId: 4,
     name: "SnipVault - Code Manager",
     image: SnipVaultImg,
     description:
@@ -35,7 +44,7 @@ const projects = [
     githubLink: "https://github.com/TejasBirla/SnipVault",
   },
   {
-    pId: 4,
+    pId: 5,
     name: "QuickChat Real-Time Messaging",
     image: QuickChatImg,
     description:
@@ -44,22 +53,13 @@ const projects = [
     githubLink: "https://github.com/TejasBirla/Quick-Chat",
   },
   {
-    pId: 5,
+    pId: 6,
     name: "Weather App",
     image: WeatherAppImg,
     description:
       "A weather forecast app built with React and OpenWeather API that displays real-time weather updates of any city.",
     liveDemo: "",
     githubLink: "https://github.com/TejasBirla/Weather-App-using-React",
-  },
-  {
-    pId: 6,
-    name: "To-Do List App",
-    image: TodoImg,
-    description:
-      "A simple and elegant to-do list app built with React for managing daily tasks efficiently with local storage support.",
-    liveDemo: "",
-    githubLink: "https://github.com/TejasBirla/TodoList",
   },
 ];
 
