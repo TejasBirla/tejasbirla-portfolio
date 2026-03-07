@@ -4,10 +4,20 @@ import EventlyImg from "../src/assets/EventlyImg.png";
 import SnipVaultImg from "../src/assets/SnipVaultImg.png";
 import QuickChatImg from "../src/assets/quickChatImg.png";
 import QuickLinkImg from "../src/assets/quickLink-hero-img.png";
+import TejasAIImg from "../src/assets/TejasAI_home.png";
 
 const projects = [
   {
     pId: 1,
+    name: "Tejas Insight - Personal AI Portfolio Assistant",
+    image: TejasAIImg,
+    description:
+      "AI that knows everything about Tejas, his skills, projects, and background. Chat and know more about Tejas.",
+    liveDemo: "https://tejas-personal-ai.vercel.app",
+    githubLink: "https://github.com/TejasBirla/TejasAI",
+  },
+  {
+    pId: 2,
     name: "Evently - Event Booking Platform",
     image: EventlyImg,
     description:
@@ -17,7 +27,7 @@ const projects = [
       "https://github.com/TejasBirla/Evently---Ticket-Booking-website",
   },
   {
-    pId: 2,
+    pId: 3,
     name: "pulseCheck Monitoring System",
     image: pulseCheckImg,
     description:
@@ -26,7 +36,7 @@ const projects = [
     githubLink: "https://github.com/TejasBirla/pulseCheck",
   },
   {
-    pId: 3,
+    pId: 4,
     name: "Shopper E-Commerce Platform",
     image: ShopperImg,
     description:
@@ -35,7 +45,7 @@ const projects = [
     githubLink: "https://github.com/TejasBirla/SHOPPER-shopping-website",
   },
   {
-    pId: 4,
+    pId: 5,
     name: "SnipVault - Code Manager",
     image: SnipVaultImg,
     description:
@@ -44,7 +54,7 @@ const projects = [
     githubLink: "https://github.com/TejasBirla/SnipVault",
   },
   {
-    pId: 5,
+    pId: 6,
     name: "QuickChat Real-Time Messaging",
     image: QuickChatImg,
     description:
@@ -53,7 +63,7 @@ const projects = [
     githubLink: "https://github.com/TejasBirla/Quick-Chat",
   },
   {
-    pId: 6,
+    pId: 7,
     name: "QuickLink - URLs Shortner",
     image: QuickLinkImg,
     description:
