@@ -26,6 +26,12 @@ export default function Navbar() {
             Home
           </li>
           <li
+            onClick={() => handleClickLink("experience")}
+            className="hover:text-[#4CAF50] hover:underline underline-offset-4 cursor-pointer transition-colors duration-200"
+          >
+            Experience
+          </li>
+          <li
             onClick={() => handleClickLink("skillSets")}
             className="hover:text-[#4CAF50] hover:underline underline-offset-4 cursor-pointer transition-colors duration-200"
           >
@@ -70,6 +76,12 @@ export default function Navbar() {
             className="cursor-pointer hover:text-[#4CAF50]"
           >
             Home
+          </li>
+          <li
+            onClick={() => handleClickLink("experience")}
+            className="cursor-pointer hover:text-[#4CAF50]"
+          >
+            Experience
           </li>
           <li
             onClick={() => handleClickLink("skillSets")}
