@@ -1,27 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
-@layer components {
-    .green-text {
-        @apply text-[#4CAF50];
-    }
-}
 
-
+@custom-variant dark (&:where(.dark, .dark *));
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* THEME VARIABLES */
+:root {
+  --bg: #ffffff;
+  --text: #1f2937;
+  --accent: #4CAF50;
+}
+
+/* DARK MODE VARIABLES */
+.dark {
+  --bg: #09090b;
+  --text: #e4e4e7;
+  --accent: #f68067;
+}
+
+/* GLOBAL USE */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
+}
+
+/* ACCENT */
+.accent-text {
+  color: var(--accent);
 }
 
 ::selection {
-    background-color: #4CAF50;
-    color: #ffffff;
-    /* text color when selected */
+  background-color: var(--accent);
+  color: white;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 2s linear 1;
 }

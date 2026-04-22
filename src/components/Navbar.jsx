@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaMoon, FaSun } from "react-icons/fa";
 
-export default function Navbar() {
+export default function Navbar({ darkMode, setDarkMode }) {
   const [menu, setOpenMenu] = useState(false);
 
   const toggleMenu = () => setOpenMenu((prev) => !prev);
@@ -12,95 +12,99 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-[#FAFAFA] text-gray-800 shadow-sm sticky top-0 z-50">
+    <nav className="bg-[var(--bg)] text-[var(--text)] shadow-sm sticky top-0 z-50 transition-colors duration-300">
       <div className="max-w-[1170px] mx-auto px-5 py-4 flex justify-between items-center">
-        {/* Logo / Name */}
-        <h1 className="text-[26px] font-bold green-text">Tejas Birla</h1>
+
+        {/* Logo */}
+        <h1 className="text-[26px] font-bold text-[var(--accent)]">
+          Tejas Birla
+        </h1>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-7 font-medium text-[17px] list-none">
-          <li
-            onClick={() => handleClickLink("home")}
-            className="hover:text-[#4CAF50] hover:underline underline-offset-4 cursor-pointer transition-colors duration-200"
-          >
-            Home
-          </li>
-          <li
-            onClick={() => handleClickLink("experience")}
-            className="hover:text-[#4CAF50] hover:underline underline-offset-4 cursor-pointer transition-colors duration-200"
-          >
-            Experience
-          </li>
-          <li
-            onClick={() => handleClickLink("skillSets")}
-            className="hover:text-[#4CAF50] hover:underline underline-offset-4 cursor-pointer transition-colors duration-200"
-          >
-            Skills
-          </li>
-          <li
-            onClick={() => handleClickLink("projects")}
-            className="hover:text-[#4CAF50] hover:underline underline-offset-4 cursor-pointer transition-colors duration-200"
-          >
-            Projects
-          </li>
+        <ul className="hidden md:flex gap-7 font-medium text-[17px]">
+          {["home", "experience", "skillSets", "projects"].map((id) => (
+            <li
+              key={id}
+              onClick={() => handleClickLink(id)}
+              className="cursor-pointer hover:text-[var(--accent)] transition-colors"
+            >
+              {id === "skillSets" ? "Skills" : id.charAt(0).toUpperCase() + id.slice(1)}
+            </li>
+          ))}
         </ul>
 
-        {/* Hamburger Icon */}
-        <div
-          className="cursor-pointer md:hidden text-[22px]"
-          onClick={toggleMenu}
-        >
-          {menu ? <FaTimes /> : <FaBars />}
-        </div>
+        {/* Right controls */}
+        <div className="flex items-center gap-4">
 
-        {/* Resume Button (Desktop Only) */}
-        <a
-          href="/Tejas_Birla_Resume.pdf"
-          rel="noreferrer"
-          target="_blank"
-          className="hidden md:inline-block bg-linear-to-r from-[#4CAF50] to-[#2E7D32] text-white px-8 py-3 rounded-full text-base font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
-        >
-          📄 View My Resume
-        </a>
+          {/* Theme Toggle (animated) */}
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className="relative w-10 h-10 flex items-center justify-center rounded-full
+                       bg-gray-200 dark:bg-gray-800 transition-all duration-500
+                       hover:scale-110"
+          >
+            <span className="transition-all duration-500 transform">
+              {darkMode ? (
+                <FaSun className="text-yellow-400 animate-spin-slow" />
+              ) : (
+                <FaMoon className="text-gray-700 animate-pulse" />
+              )}
+            </span>
+          </button>
+
+          {/* Resume */}
+          <a
+            href="/Tejas_Birla_Resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="hidden md:inline-block bg-[var(--accent)] text-white px-6 py-2 rounded-full font-semibold shadow-md hover:opacity-90 transition"
+          >
+            📄 View My Resume
+          </a>
+
+          {/* Hamburger */}
+          <div
+            className="md:hidden text-[22px] cursor-pointer"
+            onClick={toggleMenu}
+          >
+            {menu ? <FaTimes /> : <FaBars />}
+          </div>
+        </div>
       </div>
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 left-0 w-full h-full bg-white flex flex-col items-center justify-center transform transition-transform duration-300 ${
-          menu ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`fixed top-0 left-0 w-full h-full bg-[var(--bg)] text-[var(--text)]
+        flex flex-col items-center justify-center transition-transform duration-300
+        ${menu ? "translate-x-0" : "-translate-x-full"}`}
       >
-        <ul className="flex flex-col items-center gap-8 list-none text-xl font-medium text-gray-800">
-          <li
-            onClick={() => handleClickLink("home")}
-            className="cursor-pointer hover:text-[#4CAF50]"
-          >
-            Home
+        <ul className="flex flex-col items-center gap-8 text-xl font-medium">
+          {["home", "experience", "skillSets", "projects"].map((id) => (
+            <li
+              key={id}
+              onClick={() => handleClickLink(id)}
+              className="cursor-pointer hover:text-[var(--accent)] transition"
+            >
+              {id === "skillSets" ? "Skills" : id.charAt(0).toUpperCase() + id.slice(1)}
+            </li>
+          ))}
+
+          <li>
+            <button
+              onClick={() => setDarkMode(!darkMode)}
+              className="flex items-center gap-2 mt-6 text-lg hover:text-[var(--accent)]"
+            >
+              {darkMode ? <FaSun /> : <FaMoon />}
+              {darkMode ? "Light Mode" : "Dark Mode"}
+            </button>
           </li>
-          <li
-            onClick={() => handleClickLink("experience")}
-            className="cursor-pointer hover:text-[#4CAF50]"
-          >
-            Experience
-          </li>
-          <li
-            onClick={() => handleClickLink("skillSets")}
-            className="cursor-pointer hover:text-[#4CAF50]"
-          >
-            Skills
-          </li>
-          <li
-            onClick={() => handleClickLink("projects")}
-            className="cursor-pointer hover:text-[#4CAF50]"
-          >
-            Projects
-          </li>
+
           <li>
             <a
               href="/Tejas_Birla_Resume.pdf"
-              rel="noreferrer"
               target="_blank"
-              className="inline-block bg-linear-to-r from-[#4CAF50] to-[#2E7D32] text-white px-8 py-3 rounded-full text-base font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
+              rel="noreferrer"
+              className="bg-[var(--accent)] text-white px-6 py-3 rounded-full mt-4"
             >
               📄 View My Resume
             </a>

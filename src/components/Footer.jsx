@@ -6,16 +6,20 @@ import { Typewriter } from "react-simple-typewriter";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#f5f5f5] text-gray-700 py-6 border-t border-gray-200">
+    <footer className="bg-[var(--bg)] text-[var(--text)] py-6 border-t border-[var(--text)]/10 transition-colors duration-300">
+
       <div className="max-w-[1170px] mx-auto px-5 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
-        {/* Left - Name */}
+
+        {/* Left */}
         <p className="text-[15px] sm:text-[16px] md:text-[17px] leading-relaxed">
           Built with ❤️ by{" "}
-          <span className="green-text font-semibold">Tejas Birla</span>
+          <span className="text-[var(--accent)] font-semibold">
+            Tejas Birla
+          </span>
         </p>
 
-        {/* Center - Typewriter text */}
-        <p className="italic text-[15px] sm:text-[16px] md:text-[17px] font-semibold">
+        {/* Center */}
+        <p className="italic text-[15px] sm:text-[16px] md:text-[17px] font-semibold opacity-80">
           <Typewriter
             words={["Code. Create. Innovate."]}
             loop={true}
@@ -27,48 +31,43 @@ export default function Footer() {
           />
         </p>
 
-        {/* Right - Social Icons */}
+        {/* Right - Icons */}
         <div className="flex gap-4 sm:gap-5 text-[20px] sm:text-[22px] justify-center md:justify-end">
+
+          {/* Email */}
           <a
             href="mailto:tejasbirla3@gmail.com"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:scale-110 transition-transform"
-            style={{ color: "#EA4335" }}
+            className="hover:scale-110 transition-transform text-[#EA4335]"
           >
             <MdEmail />
           </a>
 
+          {/* LinkedIn */}
           <a
             href="https://www.linkedin.com/in/tejas-birla/"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:scale-110 transition-transform"
-            style={{ color: "#0A66C2" }}
+            className="hover:scale-110 transition-transform text-[#0A66C2] dark:text-[#4ea1ff]"
           >
             <FaLinkedin />
           </a>
 
+          {/* GitHub */}
           <a
             href="https://github.com/TejasBirla"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:scale-110 transition-transform"
-            style={{ color: "#171515" }}
+            className="hover:scale-110 transition-transform text-gray-900 dark:text-white"
           >
             <FaGithub />
           </a>
 
+          {/* X */}
           <a
             href="https://x.com/TejasBytes"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:scale-110 transition-transform"
-            style={{ color: "#000000" }}
+            className="hover:scale-110 transition-transform text-black dark:text-white"
           >
             <FaXTwitter />
           </a>
+
         </div>
+
       </div>
     </footer>
   );

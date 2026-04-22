@@ -4,17 +4,35 @@ import Skills from "./components/Skills.jsx";
 import Projects from "./components/Projects.jsx";
 import Footer from "./components/Footer.jsx";
 import Experience from "./components/Experience.jsx";
-import { useEffect } from "react";
+
+import { useEffect, useState } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-
 function App() {
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
+
+  // Apply theme to <html>
+  useEffect(() => {
+    const root = document.documentElement;
+
+    if (darkMode) {
+      root.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      root.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
+
+  // AOS setup
   useEffect(() => {
     Aos.init({
-      duration: 800, // animation duration (ms)
-      once: false, // animation runs only once
-      easing: "ease-in-out", // smooth easing
+      duration: 800,
+      once: false,
+      easing: "ease-in-out",
     });
 
     const handleHashChange = () => {
@@ -29,8 +47,9 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <Navbar />
+    <div className="bg-white text-gray-800 dark:bg-[#09090b] dark:text-[#e4e4e7] transition-colors duration-300">
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+
       <Home id="home" />
       <Experience id="experience" />
       <Skills id="skillSets" />
