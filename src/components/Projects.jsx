@@ -1,5 +1,5 @@
 import React from "react";
-import projects from "../data.js";
+import { projects } from "../data.js";
 
 export default function Projects({ id }) {
   return (
@@ -26,7 +26,8 @@ export default function Projects({ id }) {
             <div
               key={project.pId}
               className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2"
-            >
+            > 
+
               {/* Image */}
               <div className="w-full h-52 sm:h-56 md:h-60 lg:h-52">
                 <img
