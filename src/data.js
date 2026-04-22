@@ -6,7 +6,7 @@ import QuickChatImg from "../src/assets/quickChatImg.png";
 import QuickLinkImg from "../src/assets/quickLink-hero-img.png";
 import TejasAIImg from "../src/assets/TejasAI_home.png";
 
-const projects = [
+export const projects = [
   {
     pId: 1,
     name: "Tejas Insight - Personal AI Portfolio Assistant",
@@ -73,4 +73,18 @@ const projects = [
   },
 ];
 
-export default projects;
+export const experiences = [
+  {
+    role: "Software Engineer Intern",
+    company: "Import Star Technologies Pvt. Ltd.",
+    type: "Internship",
+    duration: "March 2026 - Present",
+    points: [
+      "Developing a cloud-based security platform using Python, PostgreSQL, and Next.js ",
+      "Building REST APIs for vulnerability management and secure data workflows",
+      "Optimizing database queries for better performance and scalability",
+      "Creating dynamic UI components to visualize security insights "
+    ]
+  }
+]
+
