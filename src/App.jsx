@@ -3,9 +3,11 @@ import Navbar from "./components/Navbar.jsx";
 import Skills from "./components/Skills.jsx";
 import Projects from "./components/Projects.jsx";
 import Footer from "./components/Footer.jsx";
+import Experience from "./components/Experience.jsx";
 import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
+
 
 function App() {
   useEffect(() => {
@@ -30,6 +32,7 @@ function App() {
     <div>
       <Navbar />
       <Home id="home" />
+      <Experience id="experience" />
       <Skills id="skillSets" />
       <Projects id="projects" />
       <Footer />
