@@ -90,16 +90,6 @@ export default function Navbar({ darkMode, setDarkMode }) {
           ))}
 
           <li>
-            <button
-              onClick={() => setDarkMode(!darkMode)}
-              className="flex items-center gap-2 mt-6 text-lg hover:text-[var(--accent)]"
-            >
-              {darkMode ? <FaSun /> : <FaMoon />}
-              {darkMode ? "Light Mode" : "Dark Mode"}
-            </button>
-          </li>
-
-          <li>
             <a
               href="/Tejas_Birla_Resume.pdf"
               target="_blank"
