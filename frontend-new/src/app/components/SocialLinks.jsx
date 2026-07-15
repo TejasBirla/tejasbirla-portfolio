@@ -34,7 +34,7 @@ const socialMedias = [
   },
   {
     title: "Email",
-    url: `mailto:${siteConfig.contact.email}`,
+    url: `https://mail.google.com/mail/?view=cm&fs=1&to=${siteConfig.contact.email}`,
     icon: <FaEnvelope />,
     ariaLabel: "Send an email"
   }
